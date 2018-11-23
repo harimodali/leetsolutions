@@ -37,3 +37,10 @@ class Solution(object):
         :rtype: str
         """
         return "".join(reversed(s))
+
+    def reverseString4(self,s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        return s[::-1] 
