@@ -8,6 +8,18 @@
 #Output: -1
 
 class Solution(object):
+#    def strStr(self, haystack, needle):
+#        """
+#        :type haystack: str
+#        :type needle: str
+#        :rtype: int
+#        """
+#        if needle == '':
+#            return 0
+#        if needle not in haystack:
+#            return -1
+#        import re
+#        return re.search(needle,haystack).span()[0]
     def strStr(self, haystack, needle):
         """
         :type haystack: str
@@ -16,7 +28,11 @@ class Solution(object):
         """
         if needle == '':
             return 0
-        if needle not in haystack:
+        len1=len(haystack)
+        len2=len(needle)
+        if len1<len2: 
             return -1
-        import re
-        return re.search(needle,haystack).span()[0]
+        for i in range(len1-len2+1):
+            if haystack[i:i+len2]==needle:
+                return i
+        return -1
